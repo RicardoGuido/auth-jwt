@@ -3,3 +3,5 @@ const usuarios = [
   { id: 2, username: "user2", password: "12345678", role: "user" },
   { id: 3, username: "user3", password: "12345678", role: "user" },
 ];
+
+export default usuarios;
