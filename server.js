@@ -56,6 +56,13 @@ app.get("/admin", authenticateToken, (req, res) => {
   res.status(200).json({ message: "Área do administrador" });
 });
 
+app.get("/owner", authenticateToken, (req, res) => {
+  if (req.user.role !== "owner") {
+    res.status(403).json({ message: "Acesso negado" });
+  }
+  res.status(200).json({ message: "Área do proprietário" });
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
